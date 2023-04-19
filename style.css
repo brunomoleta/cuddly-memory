@@ -6,7 +6,9 @@ body {
   justify-content: center;
   background-color: hsl(257, 40%, 49%);
   background-image: url("./images/bg-desktop.svg");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: 620px -150px;
   font-family: "Poppins", sans-serif;
   color: white;
   margin-inline: 5rem;
@@ -14,31 +16,43 @@ body {
 
 main {
   display: flex;
-  /* align-items: center; */
-  /* border: 2px solid black; */
   justify-content: center;
   gap: 3.75rem;
 }
 
 main > div {
   max-width: 100%;
-  /* border: 1px solid sandybrown; */
+}
+
+#illustrations{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 #huddle-logo {
   max-height: 3rem;
 }
 
-#text {
+#text-btn {
   display: flex;
   flex-flow: column;
   gap: 1.5rem;
   padding-top: 4rem;
-  max-width: 60ch;
+  max-width: 50ch;
+  align-self: center;
+}
+
+#text{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
 }
 
 h1 {
   font-weight: 600;
+  max-width: 20ch;
 }
 p {
   font-family: "Open Sans", sans-serif;
@@ -68,7 +82,7 @@ footer {
   justify-content: center;
   position: absolute;
   bottom: 3rem;
-  right: 3rem;
+  right: 10rem;
 }
 
 #icons {
@@ -123,5 +137,41 @@ footer {
   text-decoration: underline;
 }
 
-@media (width < 23.50rem) {
+@media (width < 50rem) {
+
+  body {
+    margin-inline: 4rem;
+    text-align: center;
+    background-position: center;
+
+    /* align-items: center; */
+  }
+  main{
+    flex-direction: column;
+    gap: 5rem;
+  }
+  #text-btn {
+    align-items: center;
+    padding: 0;
+  }
+
+
+
+  main>div{
+    border: 1px solid wheat;
+
+  }
+
+  #illustrations {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    
+  }
+  footer {
+    border: 1px solid wheat;
+    margin-top: 2rem;
+    position: inherit;
+    bottom: 0rem;
+  }
 }
