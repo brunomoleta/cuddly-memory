@@ -1,0 +1,127 @@
+/* -------------------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(257, 40%, 49%);
+  background-image: url("./images/bg-desktop.svg");
+  background-size: contain;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-inline: 5rem;
+}
+
+main {
+  display: flex;
+  /* align-items: center; */
+  /* border: 2px solid black; */
+  justify-content: center;
+  gap: 3.75rem;
+}
+
+main > div {
+  max-width: 100%;
+  /* border: 1px solid sandybrown; */
+}
+
+#huddle-logo {
+  max-height: 3rem;
+}
+
+#text {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+  padding-top: 4rem;
+  max-width: 60ch;
+}
+
+h1 {
+  font-weight: 600;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+#btn-register {
+  text-align: center;
+  background-color: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: hsl(257, 40%, 49%);
+  border-radius: 2rem;
+  width: 12.5rem;
+  height: 3.5rem;
+}
+
+#btn-register:hover {
+  background-color: hsl(300, 69%, 71%);
+  color: white;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+}
+
+#icons {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.a-social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.025rem solid white;
+  border-radius: 10rem;
+}
+
+.a-social-media > svg {
+  fill: white;
+  width: 50%;
+}
+
+#facebook {
+  width: 35%;
+}
+
+.a-social-media:hover,
+.a-social-media:hover > svg {
+  fill: hsl(300, 69%, 71%);
+  border: 1px solid hsl(300, 69%, 71%);
+}
+.a-social-media:hover > svg {
+  border: none;
+}
+
+/* ----------------------------------- */
+
+.attribution {
+  font-size: 0.65rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(300, 69%, 71%);
+  font-style: none;
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (width < 23.50rem) {
+}
