@@ -1,6 +1,8 @@
 /* -------------------------------------- */
 
 body {
+  color: white;
+  font-family: "Poppins", system-ui, sans-serif;
   background-color: hsl(257, 40%, 49%);
   display: flex;
   flex-direction: column;
@@ -8,30 +10,26 @@ body {
   justify-content: center;
 }
 
-#everything {
-  font-family: "Poppins", sans-serif;
-  color: white;
-  margin-inline: 2rem;
-  opacity: 0.99;
-}
-
-#bg-image {
+#img-bg {
   position: absolute;
   background-image: url("./images/bg-desktop.svg");
   background-size: cover;
-  background-position: 620px;
+  background-repeat: repeat-x;
+  background-position: 600px;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
 }
 
-main {
+#container {
+  margin-inline: 2rem;
   display: flex;
   gap: 3.75rem;
 }
 
 /* --------------------------------------------------- */
 /* How to make the logo responsive to the illustration image? */
-#huddle-logo {
+#img-logo {
   max-height: 3rem;
 }
 
@@ -67,6 +65,8 @@ p {
   font-weight: 400;
 }
 
+/* ----------------------------------- */
+
 #btn-register {
   text-align: center;
   background-color: white;
@@ -85,18 +85,18 @@ p {
 /* -------------------------------------- */
 /* social media btn's and atribution */
 footer {
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   justify-content: center;
-  position: absolute;
-  bottom: 3rem;
-  right: 10rem;
+  margin-right: 8rem;
+  margin-top: 3rem;
 }
 
 #icons {
-  display: inline-flex;
+  display: flex;
   gap: 0.5rem;
   padding: 0;
   list-style: none;
@@ -131,6 +131,18 @@ footer {
   border: none;
 }
 
+#btn-register,
+.a-social-media,
+.a-social-media > svg {
+  transition: translate 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+#btn-register:hover,
+.a-social-media:hover{
+    translate: 1px 1px;
+  
+}
 /* ----------------------------------- */
 
 .attribution {
@@ -153,15 +165,18 @@ footer {
     margin-inline: 0rem;
     text-align: center;
     background-position: center;
+
   }
 
-  #bg-image {
+  #img-bg {
+    background-image: url("./images/bg-mobile.svg");
     background-size: contain;
-    background-position: center;
-    transform: rotate(270deg) scale(2);
+    background-repeat: no-repeat;
+    background-position: top;
+
   }
 
-  main {
+  #container {
     flex-direction: column;
     gap: 5rem;
   }
@@ -170,14 +185,18 @@ footer {
     padding: 0;
   }
 
+  #text {
+    align-items: center;
+  }
+
   #illustrations {
     display: flex;
     flex-direction: column;
     gap: 5rem;
   }
   footer {
+    margin-inline: 0;
     margin-top: 5rem;
-    position: inherit;
-    bottom: 0rem;
+    align-self: center;
   }
 }

@@ -48,26 +48,64 @@ Users should be able to:
 
 ### What I learned
 
-_Position the background image so the desktop layout has one orientation and the mobile version gets rotated 90 degrees.
-So in the HTML, I used:
+\_About the semantic structure in HTML, it was made as follows:
 
 ```HTML
-<body>
-  <div id="bg-image"></div>
-  <div id="everything">
-  </div>
-</body>
-```
-_To send #everything forward in the z-axis, I used opacity to fix the position of a small background image: "background-size: cover" separated from the background color, set in the body.
+  <body>
+    <div><!-- background-image --></div>
+    <main>
+      <section>
+        <div>
+          <figure><!-- is figure semantically necessary? I don't know for sure -->
+            <img><!-- Huddle Logo. I thought about putting it in a <header>,
+              but prefered this way to gather it with the mockups illustrations on flex.
+            Besides, it's not a <header> per se -->
+          </figure>
+          <figure>
+            <img>
+              <!-- mockups-illustration -->
+          </figure>
+        </div>
+        <div>
+          <div>
+            <h1></h1>
+            <p>
+          </div>
+          <button>
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <ul aria-label="Social media links"><!-- aria-lavel to make the <ul> a landmark semantically  -->
+        <li>
+          <a>
+            <svg></svg>
+          </a>
+        </li>
+        <li>
+          <a>
+            <svg></svg>
+          </a>
+        </li>
+        <li>
+          <a>
+            <svg></svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 
+```
+
+\_To send #everything forward in the z-axis, I used opacity to fix the position of a small background image: "background-size: cover" separated from the background color, set in the body.
 
 ```css
 body {
   background-color: hsl(257, 40%, 49%);
 }
-#everything{
-  opacity: .99;
-  }
+
 #bg-image {
   position: absolute;
   background-image: URL("./images/bg-desktop.svg");
@@ -75,18 +113,11 @@ body {
   background-position: 620px;
   width: 100vw;
   height: 100vh;
-}
-@media (width < 50rem) {
-  #bg-image {
-    background-size: contain;
-    background-position: center;
-    transform: rotate(270deg) scale(2);
-  }
+  z-index: -1;
 }
 ```
 
-_Making the social media icons change the color with :hover along with the border took a while.
-To solve the issue, I wrote:
+\_Making the social media icons change the color with :hover along with the border took a while. I did the following:
 
 ```css
 .a-social-media: hover,
@@ -112,16 +143,18 @@ I chose the first option to keep it aligned with the main illustration:
 
 ```HTML
 <main>
-  <div id="illustrations">
-    <figure>
-      <img src="./images/logo.svg" alt="Huddle logo" id="huddle-logo" />
-      <figcaption>Huddle Logo</figcaption>
-    </figure>
-    <figure>
-      <img src="./images/illustration-mockups.svg" alt="mockups-illustration" />
-      <figcaption>mockups illustration</figcaption>
-    </figure>
-  </div>
+  <section>
+    <div id="illustrations">
+      <figure>
+        <img src="./images/logo.svg" alt="Huddle logo" id="huddle-logo" />
+        <figcaption>Huddle Logo</figcaption>
+      </figure>
+      <figure>
+        <img src="./images/illustration-mockups.svg" alt="mockups-illustration" />
+        <figcaption>mockups illustration</figcaption>
+      </figure>
+    </div>
+  </section>
 </main>
 ```
 
@@ -143,8 +176,7 @@ a place I have not yet grasped how to manage.
 
 ### Useful resources
 
-- [Jad Joubran's Learn HTML Course](https://learnhtmlcss.online/) - Beginner-friendly course, no videos and thoroughly
-  explained. Terrific resource.
+- [Jad Joubran's Learn HTML Course](https://learnhtmlcss.online/) - Beginner-friendly course, no videos and thoroughly explained. Terrific resource.
 
 ## Author
 
